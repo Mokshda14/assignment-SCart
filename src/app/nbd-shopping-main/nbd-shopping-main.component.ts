@@ -28,30 +28,36 @@ export class NbdShoppingMainComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.productsService.getProducts().subscribe((data: any)=>{
-      this.products = data.products;
-      this.products.map(product => product.buyCount = 0);
-    })
+    if(this.productsService.productsMain && this.productsService.productsMain.length === 0) {
+      this.productsService.getProducts().subscribe((data: any)=>{
+        this.products = this.productsService.productsMain = data.products;
+        this.products.map(product => product.buyCount = 0);
+      })
+    } else {
+      this.products = this.productsService.productsMain;
+    }
   }
 
 
   addProduct = (productId) => {
-    const productSelected = this.products
-      .find(product => product.id === productId);
-    productSelected.buyCount++;
+    const productSelectedId = this.products
+      .findIndex(product => product.id === productId);
+    this.products[productSelectedId].buyCount++;
     this.updateCart();
   }
 
   reduceProduct = (productId) => {
-    const productSelected = this.products
-      .find(product => product.id === productId);
-    productSelected.buyCount--;
+    const productSelectedId = this.products
+      .findIndex(product => product.id === productId);
+    this.products[productSelectedId].buyCount--;
     this.updateCart();
   }
 
 
   updateCart = () => {
-    const cartProduct = this.products.filter(product => product.buyCount != 0);
+    const cartProduct = this.products.filter(product => {
+      return product.buyCount != 0;
+    });
     this.messageService.sendMessage((cartProduct.length).toString(), 'updateCart');
     this.productsService.productsForCart = [...cartProduct] 
   }

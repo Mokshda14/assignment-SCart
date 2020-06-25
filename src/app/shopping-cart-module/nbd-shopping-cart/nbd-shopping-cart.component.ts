@@ -21,8 +21,31 @@ export class NbdShoppingCartComponent implements OnInit {
    }
 
    ngOnInit() {
-    this.cartProductList = [...this.productsService.productsForCart];
+    this.cartProductList = this.productsService.productsForCart;
+    this.getTotal();
+   }
+
+   getTotal = () => {
     this.total = this.cartProductList.reduce((prev, cur) => { return prev +  (cur.price * cur.buyCount)}, 0);
+   }
+
+   removeProduct =(productId) => {
+    let indexSelected = this.cartProductList.findIndex(product => product.id === productId);
+    this.cartProductList.splice(indexSelected, 1);
+    this.productsService.productsMain.map(product => {
+      product.id === productId ? product.buyCount = 0 : null;
+    })
+    this.messageService.sendMessage((this.cartProductList.length).toString(), 'updateCart');
+    this.getTotal();
+   }
+
+   removeAllProducts = () => {
+    this.productsService.productsMain.map(product => {
+      product.buyCount = 0;
+    })
+    this.cartProductList.length = 0;
+    this.messageService.sendMessage((this.cartProductList.length).toString(), 'updateCart');
+    this.getTotal();
    }
 
 }

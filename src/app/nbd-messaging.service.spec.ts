@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 
-import { NbdMessagingService } from './nbd-messaging.service';
+import { NbdMessageService } from './nbd-messaging.service';
 
 describe('NbdMessagingService', () => {
-  let service: NbdMessagingService;
+  let service: NbdMessageService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(NbdMessagingService);
+    service = TestBed.inject(NbdMessageService);
   });
 
   it('should be created', () => {

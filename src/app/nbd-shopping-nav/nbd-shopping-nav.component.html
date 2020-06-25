@@ -6,7 +6,9 @@
           <ul class="navbar-nav width100">
             <ng-template ngFor let-category [ngForOf]="categories" >
               <li class="nav-item {{selectedId == category.id ? 'active': ''}}">
-                <a class="nav-link" routerLink="/products/{{category.type}}" (click)="typeSelected(category.id)">{{category.title}}</a>
+                <a class="nav-link" routerLink="/products/{{category.type}}" 
+                  (click)="typeSelected(category.id);
+                    this.router.navigateByUrl('/products/'+category.type)">{{category.title}}</a>
               </li>
             </ng-template>
           </ul>

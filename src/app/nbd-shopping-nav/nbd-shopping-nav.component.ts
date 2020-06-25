@@ -1,37 +1,21 @@
-import { Component, OnDestroy } from '@angular/core';
-import { Subscription } from 'rxjs';
+import { Component, Input } from '@angular/core';
 import { CATEGORIES, CART } from '../common/constants';
-import { NbdMessageService } from '../nbd-messaging.service';
 
 @Component({
   selector: 'app-nbd-shopping-nav',
   templateUrl: './nbd-shopping-nav.component.html',
   styleUrls: ['./nbd-shopping-nav.component.scss']
 })
-export class NbdShoppingNavComponent implements OnDestroy{
+export class NbdShoppingNavComponent {
 
+  @Input() selectedId: number;
   categories = CATEGORIES;
-  selectedId: any;
-  subscription: Subscription;
 
-  constructor(
-    private messageService: NbdMessageService
-  ) {
-    this.subscription = this.messageService.getMessage().subscribe(routeType => {
-      if(routeType.type === 'nav') {
-        if(routeType.msg !== CART) {
-          const product = CATEGORIES.find(category => category.type === routeType.msg.split('__')[1]);
-          this.selectedId = parseInt(product.id);
-        }
-      }
-    });
-  }
+  constructor() { }
+  
 
   typeSelected = (typeIdSelected) => {
     this.selectedId = typeIdSelected;
   }
 
-  ngOnDestroy() {
-    this.subscription.unsubscribe();
-  }
 }

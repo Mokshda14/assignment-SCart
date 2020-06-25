@@ -7,6 +7,7 @@ import { HttpClient } from '@angular/common/http';
 export class NbdProductsService {
 
   productsForCart: any[] = [];
+  productsMain: any[] = [];
 
   constructor(private httpClient: HttpClient) { }
 
