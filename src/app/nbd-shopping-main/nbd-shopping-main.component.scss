@@ -1,0 +1,41 @@
+ .card {
+     margin-bottom: 1rem;
+
+   .card-img {
+        height: 150px;
+        width: 150px;
+        margin: 0 auto;
+    }
+    .card-body {
+        padding: 0px;
+
+        .card-title {
+            padding: 0 1.25rem;
+        }
+
+        .btn-group {
+            width: 100%;
+
+            div {
+                flex-grow: 1;
+                text-align: center;
+            }
+            button {
+                width: 30px;
+                flex: none;
+
+                &.plus span {
+                    transform: rotate(45deg);
+                }
+
+                &.minus span{
+                    transform: rotate(90deg);
+                }
+
+                span {
+                    display:block
+                }
+            }
+        }
+    }
+ }

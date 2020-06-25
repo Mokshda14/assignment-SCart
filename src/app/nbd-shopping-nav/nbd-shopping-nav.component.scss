@@ -1,0 +1,14 @@
+#nbdNav.navbar-expand-sm .navbar-nav {
+    flex-direction: column;
+
+    &.width100 {
+        width: 100%;
+    }
+    .nav-item.active {
+        background-color: #007bff !important;
+
+        a {
+            color: #fff;
+        }
+    }
+}

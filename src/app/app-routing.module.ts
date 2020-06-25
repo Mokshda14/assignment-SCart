@@ -4,8 +4,8 @@ import { NbdShoppingMainComponent } from './nbd-shopping-main/nbd-shopping-main.
 
 
 const routes: Routes = [
-  { path: '', redirectTo: '/home', pathMatch: 'full' },
-  { path: 'home', component: NbdShoppingMainComponent },
+  { path: '', redirectTo: '/products/All', pathMatch: 'full' },
+  { path: 'products/:typeId', component: NbdShoppingMainComponent },
   {
     path: 'shoppingCart',
     loadChildren : () => import('./shopping-cart-module/shopping-cart-module.module').then(m => m.ShoppingCartModule),

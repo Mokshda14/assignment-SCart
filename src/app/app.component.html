@@ -3,15 +3,25 @@
   <app-nbd-shopping-header></app-nbd-shopping-header>
   <div class="container nbd-main">
     <div class="row">  
-      <div class="col-md-3 col-sm">
+      <div class="col-sm-12">
+          <ul class="nav">
+            <li class="nav-item">
+              <a class="nav-link active" routerLink="/products/All">Products</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" routerLink="/shoppingCart">
+                Cart <span class="badge badge-light" *ngIf="updateCartCount ">{{updateCartCount}}</span>
+              </a>
+            </li>
+          </ul>
+      </div>
+      <div class="col-md-3 col-sm" *ngIf="sideNavViewFlag">
           <app-nbd-shopping-nav></app-nbd-shopping-nav>
       </div>
-      <div class="col-md-9 col-sm">
+      <div class="col-md-9 col-sm" [ngClass]="{'col-md-12': !sideNavViewFlag, 'col-md-9': sideNavViewFlag}">
           <router-outlet></router-outlet>
       </div>
     </div>
   </div>
-
-  <button routerLink="/shoppingCart">CART</button>
 
 <div>

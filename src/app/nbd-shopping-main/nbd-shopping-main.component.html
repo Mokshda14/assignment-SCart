@@ -1,0 +1,33 @@
+<div class="container nbd-main">
+    <div class="row" *ngIf="products">
+        <ng-template ngFor let-product [ngForOf]="products | nbdProductTypeFilter: selectedType" >
+            <div class="col-sm-12 col-md-6 col-lg-4">
+                <div class="card">
+                    <div class="card-img">
+                        <img src="{{'/assets/images' + product.imageSrc}}" class="card-img-top" alt="..." height="135">
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">{{product.name}}</h5>
+                        <p class="card-title">{{product.price | number:"2.2-3" | currency: "USD"}}</p>
+                        <ng-template [ngIf]="product?.buyCount" [ngIfElse]="addCartBtn">
+                            <div class="btn-group btn-group-sm" role="group" aria-label="Basic example">
+                                <button type="button" class="btn btn-secondary plus" (click)="addProduct(product.id)">
+                                    <span>&#10005;</span>
+                                </button>
+                                <div>{{product.buyCount}} in cart</div>
+                                <button type="button" class="btn btn-secondary minus" (click)="reduceProduct(product.id)">
+                                    <span>&#10073;</span>
+                                </button>
+                            </div>
+                        </ng-template>
+                        <ng-template #addCartBtn>
+                            <button type="button" class="btn btn-secondary btn-sm btn-block" (click)="addProduct(product.id)">
+                                Add to cart
+                            </button>
+                        </ng-template>
+                    </div>
+                </div>
+            </div>
+        </ng-template>
+    </div>
+</div>

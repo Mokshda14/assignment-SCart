@@ -1,0 +1,139 @@
+{"products" :
+	[
+		{
+			"id": 1,
+			"name": "Broccoli",
+			"imageSrc": "/vegetable/broccoli.jpg",
+			"type": "vegetable",
+			"typeId": 5,
+			"price": 2.3,
+			"qty": 3
+		},
+		{
+			"id": 2,
+			"name": "Nutmeg",
+			"imageSrc": "/spices/nutmeg.jpg",
+			"type": "spices",
+			"typeId": 4,
+			"price": 3,
+			"qty": 3
+		},
+		{
+			"id": 3,
+			"name": "Mix Fruits",
+			"imageSrc": "/fruit/mixFruits.jpg",
+			"type": "fruit",
+			"typeId": 3,
+			"price": 3.5,
+			"qty": 3
+		},
+		{
+			"id": 4,
+			"name": "Cheeze",
+			"imageSrc": "/dairy/cheeze.jpg",
+			"type": "dairy",
+			"typeId": 2,
+			"price": 4.2,
+			"qty": 3
+		},
+		{
+			"id": 5,
+			"name": "Cauliflower",
+			"imageSrc": "/vegetable/cauliflower.jpg",
+			"type": "vegetable",
+			"typeId": 5,
+			"price": 3.2,
+			"qty": 3
+		},
+		{
+			"id": 6,
+			"name": "White Bread",
+			"imageSrc": "/bread/white.jpg",
+			"type": "bread",
+			"typeId": 1,
+			"price": 1.5,
+			"qty": 3
+		},
+		{
+			"id": 7,
+			"name": "Milk",
+			"imageSrc": "/dairy/milk.jpg",
+			"type": "dairy",
+			"typeId": 2,
+			"price": 3.7,
+			"qty": 3
+		},
+		{
+			"id": 8,
+			"name": "Whole Grain",
+			"imageSrc": "/bread/wholeGrain.jpg",
+			"type": "bread",
+			"typeId": 1,
+			"price": 2.4,
+			"qty": 3
+		},
+		{
+			"id": 9,
+			"name": "Brown Bread",
+			"imageSrc": "/bread/brown.jpg",
+			"type": "bread",
+			"typeId": 1,
+			"price": 1.9,
+			"qty": 3
+		},
+		{
+			"id": 10,
+			"name": "Orange",
+			"imageSrc": "/fruit/orange.jpg",
+			"type": "fruit",
+			"typeId": 3,
+			"price": 4.5,
+			"qty": 3
+		},
+		{
+			"id": 11,
+			"name": "Banana Bread",
+			"imageSrc": "/bread/banana.jpg",
+			"type": "bread",
+			"typeId": 1,
+			"price": 3.1,
+			"qty": 3
+		},
+		{
+			"id": 12,
+			"name": "Yoghurt",
+			"imageSrc": "/dairy/yoghurt.jpg",
+			"type": "dairy",
+			"typeId": 2,
+			"price": "5.7",
+			"qty": 3
+		},
+		{
+			"id": 13,
+			"name": "Butter",
+			"imageSrc": "/dairy/butter.jpg",
+			"type": "dairy",
+			"typeId": 2,
+			"price": 5.7,
+			"qty": 3
+		},
+		{
+			"id": 14,
+			"name": "Apple",
+			"imageSrc": "/fruit/apple.jpg",
+			"type": "fruit",
+			"typeId": 3,
+			"price": 4.1,
+			"qty": 3
+		},
+		{
+			"id": 15,
+			"name": "Peppercorn",
+			"imageSrc": "/spices/peppercorn.jpg",
+			"type": "spice",
+			"typeId": 4,
+			"price": 4.2,
+			"qty": 3
+		}
+	]
+}
