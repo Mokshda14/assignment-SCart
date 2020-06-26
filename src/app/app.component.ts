@@ -1,7 +1,7 @@
 import { Component, OnDestroy } from '@angular/core';
-import { CART } from './common/constants';
+import { CART } from './shared/constants';
 import { Subscription } from 'rxjs';
-import { NbdMessageService } from './nbd-messaging.service';
+import { NbdMessageService } from './shared/services/nbd-messaging.service';
 
 @Component({
   selector: 'app-root',
@@ -18,15 +18,8 @@ export class AppComponent implements OnDestroy{
     private messageService: NbdMessageService
   ) {
     this.subscription = this.messageService.getMessage().subscribe(routeType => {
-      if(routeType.type === 'nav') {
-        if(routeType.msg == CART) {
-          this.sideNavViewFlag = false;
-        } else {
-          this.sideNavViewFlag = true;
-        }
-      } else {
+        debugger;
         this.updateCartCount = parseInt(routeType.msg);
-      }
     });
   }
 

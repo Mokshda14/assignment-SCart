@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { CATEGORIES, CART } from '../common/constants';
+import { CATEGORIES, CART } from '../shared/constants';
 
 @Component({
   selector: 'app-nbd-shopping-nav',

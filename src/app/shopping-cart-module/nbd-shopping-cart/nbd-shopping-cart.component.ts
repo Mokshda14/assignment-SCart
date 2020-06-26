@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { CART } from '../../common/constants';
-import { NbdProductsService } from '../../nbd-products.service';
-import { NbdMessageService } from '../../nbd-messaging.service';
+import { CART } from '../../shared/constants';
+import { NbdProductsService } from '../../shared/services/nbd-products.service';
+import { NbdMessageService } from '../../shared/services/nbd-messaging.service';
 
 @Component({
   selector: 'app-nbd-shopping-cart',
@@ -17,7 +17,6 @@ export class NbdShoppingCartComponent implements OnInit {
     private messageService: NbdMessageService,
     private productsService: NbdProductsService
   ) {
-    this.messageService.sendMessage(CART, 'nav');
    }
 
    ngOnInit() {

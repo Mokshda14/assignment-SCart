@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
-import { NbdProductsService } from '../nbd-products.service';
-import { NbdMessageService } from '../nbd-messaging.service';
-import { CATEGORIES, PRODUCT } from '../common/constants';
+import { NbdProductsService } from '../shared/services/nbd-products.service';
+import { NbdMessageService } from '../shared/services/nbd-messaging.service';
+import { CATEGORIES, PRODUCT } from '../shared/constants';
 
 @Component({
   selector: 'app-nbd-shopping-main',
@@ -20,9 +20,14 @@ export class NbdShoppingMainComponent implements OnInit {
     private messageService: NbdMessageService
   ) {
     this.route.params.subscribe( params => {
-        const product = CATEGORIES.find(category => category.type === params.typeId);
-        this.selectedType = parseInt(product.id);
-        this.messageService.sendMessage(PRODUCT + '__' + params.typeId, 'nav');
+        if(params && params.typeId) {
+          const product = CATEGORIES.find(category => {
+            return category.type === params.typeId
+          });
+          this.selectedType = parseInt(product.id);
+        } else {
+          this.selectedType = 1;
+        }
       }
     );
   }
