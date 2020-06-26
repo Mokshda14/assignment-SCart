@@ -1,0 +1,16 @@
+<nav class="navbar navbar-expand-sm navbar-light bg-light" id="nbdNav">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarText">
+          <ul class="navbar-nav width100">
+            <ng-template ngFor let-category [ngForOf]="categories" >
+              <li class="nav-item {{selectedId == category.id ? 'active': ''}}">
+                <a class="nav-link" [routerLink]="['/products/' + category.type]" 
+                  (click)="typeSelected(category.id)">{{category.title}}</a>
+              </li>
+              
+            </ng-template>
+          </ul>
+        </div>
+      </nav>

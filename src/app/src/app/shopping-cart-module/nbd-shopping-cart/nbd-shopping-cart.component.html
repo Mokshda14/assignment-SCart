@@ -1,0 +1,48 @@
+<div class="container nbd-main">
+        <div class="row border-bottom">
+            <div class="d-sm-none d-md-block  col-md-3">
+                <h6>PICTURE</h6>
+            </div>
+            <div class="col-sm-3 col-md-2">
+                <h6>NAME</h6>
+            </div>  
+            <div class="col-sm-3  col-md-2">
+                <h6>QUANTITY</h6>
+            </div>           
+            <div class="col-sm-3  col-md-2">
+                <h6>PRICE</h6>
+            </div>
+            <div class="col-sm-3  col-md-2">
+                <a class="btn-danger btn" (click)="removeAllProducts()" *ngIf="cartProductList && cartProductList !== 0">Remove All</a>
+            </div>
+        </div>
+        <div class="row empty-cart-container" *ngIf="!cartProductList || cartProductList.length === 0">  
+                <h3>Your cart is empty. Please select some products!!</h3>
+        </div>
+        <div class="row" *ngIf="cartProductList && cartProductList.length !== 0">           
+            <ng-template ngFor let-product [ngForOf]="cartProductList" >
+                <div class="d-sm-none d-md-block  col-md-3">
+                    <div class="image-card">
+                    <img src="{{'/assets/images' + product.imageSrc}}" class="card-img-top" alt="..." height="120">
+                    </div>
+                </div>
+                <div class="col-sm-3 col-md-2">
+                    <h5 class="card-title">{{product.name}}</h5>
+                </div>  
+                <div class="col-sm-3  col-md-2 card-title">
+                    <div>{{product.buyCount}}</div>
+                </div>           
+                <div class="col-sm-3  col-md-2">
+                    <p class="card-title">{{product.price * product.buyCount | number:"2.2-3" | currency: "USD"}}</p>
+                </div>
+                <div class="col-sm-3  col-md-2">
+                    
+                        <button type="button" (click)="removeProduct(product.id)" class="btn btn-danger card-title">Delete</button>
+                </div>    
+            </ng-template>
+        </div>
+        <div class="text-right border-top border-bottom">
+            <h6 class=""><span>TOTAL: {{total | number:"2.2-3" | currency: "USD"}}</span></h6>
+        </div>
+</div>
+    
