@@ -1,4 +1,4 @@
-# NbdShoppingCart
+# Shopping Cart | E - NBD
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.0.0-rc.5.
 
@@ -25,3 +25,15 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
+## Topics Covered
+
+1) Routing
+2) Observables
+3) Subject
+4) Responsiveness - Bootstrap
+5) Input Properties
+6) Directives - Structural
+7) Custom Pipes
+8) Custom Services
+9) Karma
